@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "钓鱼网站检测器",
+    "version": "1.0",
+    "description": "钓鱼网站检测器",
+    "permissions": [
+        "activeTab"
+      ],
+    "browser_action": {
+        "default_title": "钓鱼网站检测器",
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "128": "icon/icon128.png"
+        }
+    },
+    
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
