@@ -1,4 +1,4 @@
-// 检测（预期功能:提交数据给服务器,接受返回的值
+// 检测（预期功能:提交数据给服务器,接受返回的值，还没做好
 document.getElementById('Detect').addEventListener('click', function () {
     chrome.tabs.executeScript({
       code: 'window.alert("此站点为钓鱼网站！")'
