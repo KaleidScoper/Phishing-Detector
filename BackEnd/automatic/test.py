@@ -67,6 +67,8 @@ val_data_loader = DataLoader(val_dataset, batch_size=1, collate_fn=collate_fn, s
 test_data_loader = DataLoader(test_dataset, batch_size=1, collate_fn=collate_fn, shuffle=False)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+#导入模型
 model = torch.load("./model_storage/model-cc.pkl")
 model.eval()
 
