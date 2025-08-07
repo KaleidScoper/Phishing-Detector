@@ -3,11 +3,13 @@ from torch import nn, optim
 from torch.nn import functional as F
 from torch.utils.data import Dataset, DataLoader
 from torch.nn.utils.rnn import pad_sequence
-from utils import load_sentence_polarity
+#from utils import load_sentence_polarity
+from automatic.utils import load_sentence_polarity
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
-from pytorchtools import EarlyStopping
+#from pytorchtools import EarlyStopping
+from automatic.pytorchtools import EarlyStopping
 
 class CnnDataset(Dataset):
     def __init__(self, data):

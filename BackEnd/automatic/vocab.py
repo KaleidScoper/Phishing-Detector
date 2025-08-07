@@ -1,7 +1,7 @@
 import string
 
 
-all_chars = string.ascii_letters + string.digits + " ,;.!?:/\|_@#$%^&*~`+-=<>()[]{}'\""
+all_chars = string.ascii_letters + string.digits + r" ,;.!?:/\|_@#$%^&*~`+-=<>()[]{}'\""
 class Vocab:
     def __init__(self, tokens=None):
         self.idx_to_token = list()

@@ -91,7 +91,7 @@ def get_bestsplit_list2(sample_set, var):
     sl = [0]
     split_list = []
     bining_data_split(sample_set, var, min_df, split_list)
-    if sp[var] == True:
+    if split_list[var] == True:
         sl = sl + split_list
         m = sample_set[var].max()
         sl = sorted(split_list)

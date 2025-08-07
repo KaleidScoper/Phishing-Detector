@@ -1,10 +1,11 @@
 import torch
-from vocab import Vocab,save_vocab
+#from vocab import Vocab,save_vocab
+from automatic.vocab import  Vocab,save_vocab
 
 
 # parameter
-data0_path="./data/legtimate-58w.txt"
-data1_path="./data/phish-58w.txt"
+data0_path="automatic/data/legtimate-58w.txt"
+data1_path="automatic/data/phish-58w.txt"
 train_prop=0.8
 val_prop=0.1
 test_prop=0.1
@@ -33,6 +34,9 @@ def load_data(filepath):
     f.close()
     return data_char
 
+
+def url_cut(urls,length):
+    return [url[:length] for url in urls]
 
 def url_jieduan(url,len):
     jieduan=[]

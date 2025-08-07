@@ -3,9 +3,12 @@ from torch import nn
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 from torch.nn.utils.rnn import pad_sequence
-from utils import  url_cut, get_char_ngrams, load_data
+#from utils import  url_cut, get_char_ngrams, load_data
+from automatic.artificial import urls_artificial
+from automatic.utils import url_cut, get_char_ngrams, load_data,url_jieduan
 import numpy as np
-from vocab import Vocab, read_vocab
+#from vocab import Vocab, read_vocab
+from automatic.vocab import Vocab, read_vocab
 from sklearn.linear_model import LogisticRegression as LR
 from sklearn.neighbors import KNeighborsClassifier as KNN
 from sklearn.svm import SVC
@@ -72,7 +75,8 @@ def get_part_feature(data):
     inputs = DataLoader(data, batch_size=256, collate_fn=collate_fn, shuffle=False)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = torch.load("./model_storage/model-cc.pkl")
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = torch.load("./model_storage/model-cc.pkl", map_location=device)
     flag = True
     for batch in inputs:
         x, y = [x.to(device) for x in batch]
